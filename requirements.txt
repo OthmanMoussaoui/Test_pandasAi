@@ -4,3 +4,4 @@ matplotlib
 langchain
 langchain-groq
 pandasai
+numpy
