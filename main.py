@@ -6,12 +6,13 @@ from pandasai import SmartDataframe
 from langchain_groq.chat_models import ChatGroq
 
 # Load environment variables (if you have .env file for API keys)
-load_dotenv()
+
+
 
 # Set up the ChatGroq LLM
 llm = ChatGroq(
     model_name='llama3-70b-8192',
-    api_key='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'  # Replace with your actual API key
+    api_key=st.secrets["apikey"]  # Replace with your actual API key
 )
 
 # Streamlit App
@@ -34,7 +35,7 @@ if uploaded_file is not None:
         st.dataframe(data)
 
         # Create a SmartDataframe with the LLM
-        df = SmartDataframe(data, config={'llm': llm})
+        df = SmartDataframe(data, config={'llm': llm, "verbose": True})
 
         # Text input for user questions
         question = st.text_input("Ask a question about the data:")
