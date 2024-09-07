@@ -12,7 +12,7 @@ load_dotenv()
 # Set up the ChatGroq LLM
 llm = ChatGroq(
     model_name='llama3-70b-8192',
-    api_key=apikey  # Replace with your actual API key
+    api_key=st.secrets["apikey"]  # Replace with your actual API key
 )
 
 # Streamlit App
