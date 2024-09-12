@@ -16,7 +16,12 @@ llm = ChatGroq(
 )
 # Streamlit App
 st.set_page_config(page_title="Data Science for Everyone", page_icon="📊")
-
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 # Title and logo
 st.image("logoo.png", width=150)  # Replace "logo.png" with the path to your logo file
 st.title('Data Science for Everyone')
